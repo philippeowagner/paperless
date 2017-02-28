@@ -16,11 +16,13 @@ class UploadForm(forms.Form):
 
     SECRET = settings.SHARED_SECRET
     TYPE_LOOKUP = {
-        "application/pdf": Document.TYPE_PDF,
+        "application/pdf": Document.TYPE_PDF, # 'PDF document, version 1.4' ???
         "image/png": Document.TYPE_PNG,
         "image/jpeg": Document.TYPE_JPG,
         "image/gif": Document.TYPE_GIF,
         "image/tiff": Document.TYPE_TIF,
+        "ASCII text": Document.TYPE_ASCII_TEXT,
+        # "HTML document, ASCII text"
     }
 
     correspondent = forms.CharField(
