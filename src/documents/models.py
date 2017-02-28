@@ -208,8 +208,10 @@ class Document(models.Model):
 
     @property
     def source_file(self):
-        return open(self.source_path, "rb")
-
+        try:
+            return open(self.source_path, "rb")
+        except FileNotFoundError:
+            return "https://www.royalacademy.org.uk/assets/placeholder-1e385d52942ef11d42405be4f7d0a30d.jpg"
     @property
     def file_name(self):
         return slugify(str(self)) + "." + self.file_type
