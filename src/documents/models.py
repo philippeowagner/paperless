@@ -157,7 +157,7 @@ class Document(models.Model):
     TYPE_ASCII_TEXT = "txt"
     #TYPE_MARKDOWN = "markdown" # https://tools.ietf.org/html/rfc7763
 
-    TYPES = (TYPE_PDF, TYPE_PNG, TYPE_JPG, TYPE_GIF, TYPE_TIF, TYPE_PLAIN)#, TYPE_MARKDOWN)
+    TYPES = (TYPE_PDF, TYPE_PNG, TYPE_JPG, TYPE_GIF, TYPE_TIF, TYPE_ASCII_TEXT)#, TYPE_MARKDOWN)
 
     correspondent = models.ForeignKey(
         Correspondent, blank=True, null=True, related_name="documents")
