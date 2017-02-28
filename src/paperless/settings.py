@@ -106,25 +106,16 @@ WSGI_APPLICATION = 'paperless.wsgi.application'
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(
-            os.getenv(
-                "PAPERLESS_DBDIR",
-                os.path.join(BASE_DIR, "..", "data")
-            ),
-            "db.sqlite3"
-        )
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'paperless',
+        'USER': 'paperless_u',
+        'PASSWORD': '912masjk1jk1j1nmanmax',
+        'HOST': '127.0.0.1',
+        'PORT': '',
+        # 'CONN_MAX_AGE': 300,  # 5 minutues
     }
 }
-
-if os.getenv("PAPERLESS_DBUSER") and os.getenv("PAPERLESS_DBPASS"):
-    DATABASES["default"] = {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("PAPERLESS_DBNAME", "paperless"),
-        "USER": os.getenv("PAPERLESS_DBUSER"),
-        "PASSWORD": os.getenv("PAPERLESS_DBPASS")
-    }
 
 
 # Password validation
