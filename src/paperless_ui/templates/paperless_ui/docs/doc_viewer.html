@@ -1,0 +1,34 @@
+{% extends "paperless_ui/base.html" %}
+{% block content %}
+<div id="content" class="pmd-content">
+
+    <!-- Buttons -->
+	<div class="container-fluid">
+
+		<!-- Title -->
+		<h1 class="section-title" id="services">
+			<span>Card</span>
+		</h1><!-- End Title -->
+
+		<!--breadcrum start-->
+		<ol class="breadcrumb text-left">
+		  <li><a href="">Dashboard</a></li>
+		  <li class="active">Card</li>
+		</ol><!--breadcrum end-->
+
+		<!--component header -->
+		<div class="componant-title-bg">
+			<p class="lead">A card is a flexible and extensible content container. It includes options for header and footer, a wide variety of content, contextual background colors, and powerful display options.</p>
+		</div> <!--component header end -->
+
+		{{ doc.content|safe }}
+
+<hr>
+{{ md_content|safe }}
+
+		</div>
+
+	</div> <!--Buttons end-->
+
+</div>
+{% endblock %}
