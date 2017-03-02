@@ -120,14 +120,13 @@ class DocumentAdmin(CommonAdmin):
             attributes.append('{}="{}"'.format(lft, rgt))
 
         if inside is not None:
-            if kind == "img-responsive":
-                return "<img class='img-responsive' {attributes}>{inside}>".format(
-                    kind=kind, attributes=" ".join(attributes), inside=inside)
-            else:
-                return "<{kind} {attributes}>{inside}</{kind}>".format(
+            return "<{kind} {attributes}>{inside}</{kind}>".format(
                     kind=kind, attributes=" ".join(attributes), inside=inside)
 
-        return "<{} {}/>".format(kind, " ".join(attributes))
+        if kind == "img-responsive":
+            return "<img class='img-responsive' {attributes}/>".format(attributes=" ".join(attributes))
+        else:
+            return "<{} {}/>".format(kind, " ".join(attributes))
 
 
 class LogAdmin(CommonAdmin):
