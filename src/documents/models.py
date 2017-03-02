@@ -189,6 +189,17 @@ class Document(models.Model):
     class Meta(object):
         ordering = ("correspondent", "title")
 
+    def save(self):
+        first_save = False
+        if not self.id:
+            first_save = True
+            super(Document, self).save(*args, **kwargs)
+
+        if first_save:
+            import hashlib
+            self.checksum = hashlib.md5("paperless-document-"+str(self.id)).hexdigest()
+            super(Document, self).save(*args, **kwargs)
+
     def __str__(self):
         created = self.created.strftime("%Y%m%d%H%M%S")
         if self.correspondent and self.title:
