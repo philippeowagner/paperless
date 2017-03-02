@@ -190,15 +190,11 @@ class Document(models.Model):
         ordering = ("correspondent", "title")
 
     def save(self, *args, **kwargs):
-        first_save = False
         if not self.id:
             first_save = True
-            super(Document, self).save(*args, **kwargs)
-
-        if first_save:
             import hashlib
             self.checksum = hashlib.md5("paperless-document-"+str(self.id)).hexdigest()
-            super(Document, self).save(*args, **kwargs)
+        super(Document, self).save(*args, **kwargs)
 
     def __str__(self):
         created = self.created.strftime("%Y%m%d%H%M%S")
