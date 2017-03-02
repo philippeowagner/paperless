@@ -71,7 +71,7 @@ class DocumentAdmin(CommonAdmin):
             src="/fetch/thumb/{}".format(obj.id),
             width="1184",
             height="666",
-            class="img-responsive"            
+            class="img-responsive",            
             alt="Thumbnail of {}".format(obj.file_name),
             title=obj.file_name
         )
