@@ -190,9 +190,9 @@ class Document(models.Model):
         ordering = ("correspondent", "title")
 
     def save(self, *args, **kwargs):
-        if not self.id: 
+        if not self.id:
             import hashlib
-            self.checksum = hashlib.md5(("paperless-document-%d" % self.id).encode('utf-8')).hexdigest()
+            self.checksum = hashlib.md5(("paperless-document-{}".format(self.id)).encode('utf-8')).hexdigest()
         super(Document, self).save(*args, **kwargs)
 
     def __str__(self):
