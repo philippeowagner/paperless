@@ -4,9 +4,7 @@
 <div id="content" class="pmd-content">
 
 
-  <!-- ------ -->
-  <!-- Buttons -->
-  <div class="container-fluid">
+ {% comment %}
 
   {# This is just copypasta from the parent change_list_results.html file #}
   <table id="result_list">
@@ -31,7 +29,9 @@
   </table>
   {# /copypasta #}
 
+  {% endcomment %}
 
+{% comment %}
 
   <script>
     // We nee to re-build the select-all functionality as the old logic pointed
@@ -42,9 +42,7 @@
     });
   </script>
 
-
-</div> <!--Buttons end-->
-<!-- ------ -->
+{% endcomment %}
 
     <!-- Buttons -->
 	<div class="container-fluid">
@@ -80,7 +78,7 @@
   				<h3 class="text-muted">Media, Title, Action, and Description area</h3>
   				<div class="pmd-card pmd-card-default pmd-z-depth">
   					<div class="pmd-card-media">
-  						<img src="{{ result.3 }}" width="1184" height="666" class="img-responsive">
+  						<img src="{{ result.3.image.url }}" width="1184" height="666" class="img-responsive">
   					</div>
   					<div class="pmd-card-title">
   						<h2 class="pmd-card-title-text">{{ result.1 }}</h2>
