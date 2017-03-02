@@ -193,7 +193,7 @@ class Document(models.Model):
         if not self.id:
             first_save = True
             import hashlib
-            self.checksum = hashlib.md5("paperless-document-"+str(self.id)).hexdigest()
+            self.checksum = hashlib.md5("paperless-document-"+str(self.id).encode('utf-8')).hexdigest()
         super(Document, self).save(*args, **kwargs)
 
     def __str__(self):
