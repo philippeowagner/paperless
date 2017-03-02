@@ -189,7 +189,7 @@ class Document(models.Model):
     class Meta(object):
         ordering = ("correspondent", "title")
 
-    def save(self):
+    def save(self, *args, **kwargs):
         first_save = False
         if not self.id:
             first_save = True
