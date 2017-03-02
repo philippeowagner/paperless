@@ -68,6 +68,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "crispy_forms",
 
+    'propeller',
+
 ]
 
 MIDDLEWARE_CLASSES = [
