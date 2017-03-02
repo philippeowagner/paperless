@@ -27,7 +27,7 @@
 				<h3 class="text-muted">Media, Title, Action, and Description area</h3>
 				<div class="pmd-card pmd-card-default pmd-z-depth">
 					<div class="pmd-card-media">
-						<img src="http://propeller.in/assets/images/profile-pic.png" width="1184" height="666" class="img-responsive">
+						<img src="{{ doc.thumbnail_url }}" width="1184" height="666" class="img-responsive">
 					</div>
 					<div class="pmd-card-title">
 						<h2 class="pmd-card-title-text">{{ doc.title }}</h2>
@@ -39,6 +39,7 @@
 						<a href="{{ doc.download_url }}"><button class="btn pmd-btn-flat pmd-ripple-effect btn-default" type="button">Edit</button></a>
 					</div>
 					<div class="pmd-card-body">
+						<a href=""><button class="btn pmd-btn-outline btn-default" type="button">Tag</button></a>
 						Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.
 					</div>
 				</div>
