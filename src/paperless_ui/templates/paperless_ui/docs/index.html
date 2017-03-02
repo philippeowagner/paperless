@@ -22,6 +22,7 @@
 		</div> <!--component header end -->
 
 
+		{% for doc in docs %}
 			<div class="col-md-4 col-sm-6">
 				<h3 class="text-muted">Media, Title, Action, and Description area</h3>
 				<div class="pmd-card pmd-card-default pmd-z-depth">
@@ -29,7 +30,7 @@
 						<img src="http://propeller.in/assets/images/profile-pic.png" width="1184" height="666" class="img-responsive">
 					</div>
 					<div class="pmd-card-title">
-						<h2 class="pmd-card-title-text">Title goes here</h2>
+						<h2 class="pmd-card-title-text">{{ doc.title }}</h2>
 						<span class="pmd-card-subtitle-text">Secondary text</span>
 					</div>
 					<div class="pmd-card-actions">
@@ -42,7 +43,7 @@
 				</div>
 			</div>
 
-
+		{% endfor }
 
 
 		</div>
