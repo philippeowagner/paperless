@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
-from django.conf.urls import url, static, include
+from django.conf.urls import url, static, include, patterns
 
 
 urlpatterns = patterns('propeller.views',
