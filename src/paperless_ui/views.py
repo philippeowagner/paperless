@@ -6,6 +6,6 @@ from documents.models import *
 
 @login_required
 def index(request):
-    docs = Docuements.objects.all()
+    docs = Document.objects.all()
     context = {'docs': docs, }
     return render(request, 'paperless_ui/docs/index.html', context)
