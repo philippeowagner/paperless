@@ -146,6 +146,7 @@ class Tag(MatchingModel):
 
     colour = models.PositiveIntegerField(choices=COLOURS, default=1)
 
+# http://stackoverflow.com/a/1385145/485361
 
 class Document(models.Model):
 
@@ -211,7 +212,7 @@ class Document(models.Model):
         try:
             return open(self.source_path, "rb")
         except FileNotFoundError:
-            return "https://www.royalacademy.org.uk/assets/placeholder-1e385d52942ef11d42405be4f7d0a30d.jpg"
+            return "placeholder.png"
     @property
     def file_name(self):
         return slugify(str(self)) + "." + self.file_type
