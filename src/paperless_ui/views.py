@@ -5,4 +5,4 @@ from django.shortcuts import render
 @login_required
 def index(request):
     context = {}
-    return render(request, 'docs/index.html', context)
+    return render(request, 'paperless_ui/docs/index.html', context)

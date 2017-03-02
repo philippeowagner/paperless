@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "crispy_forms",
 
-    'propeller',
+    'paperless_ui',
 
 ]
 

@@ -5,5 +5,5 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^all/$', views.index, name='propeller_index'),
+    url(r'^all/$', views.index, name='paperless_ui_index'),
 ]
