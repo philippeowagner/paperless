@@ -100,11 +100,11 @@ class DocumentAdmin(CommonAdmin):
             "a",
             self._html_tag(
                 "img",
-                src=static("documents/img/{}.png".format(obj.file_type)),
-                width=22,
-                height=22,
-                alt=obj.file_type,
-                title=obj.file_name
+                src = static("documents/img/{}.png".format(obj.file_type)),
+                width = 22,
+                height = 22,
+                alt = obj.file_type,
+                title = obj.file_name
             ),
             href=obj.download_url
         )
