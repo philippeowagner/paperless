@@ -19,11 +19,9 @@ def upload_files(request):
         form = FileFieldForm(request.POST, request.FILES)
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
-            return HttpResponseRedirect(reverse('paperless_uploader:upload_files_home'))
+            return HttpResponseRedirect(reverse('paperless_uploader_home'))
     else:
         form = FileFieldForm()
 
     context = {'form': form}
     return render(request, 'paperless_uploader/index.html', context)
-
-    
