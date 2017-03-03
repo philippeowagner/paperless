@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     "crispy_forms",
 
     'paperless_ui',
+    'paperless_uploader',
 
 ]
 
