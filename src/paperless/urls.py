@@ -52,6 +52,8 @@ urlpatterns = [
 
 
     url(r"^docs/", include("paperless_ui.urls")),
+    url(r'^docs/upload/$', 'paperless_uploader.views.upload_files', name='upload_files_home'),
+
     # The Django admin
     url(r"admin/", admin.site.urls),
     url(r"", admin.site.urls),  # This is going away
