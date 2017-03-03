@@ -2,14 +2,16 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Upload a file in Django 1.5 using Dropzone.js</title>
+		
 		{% load staticfiles %}
 		<link href="{% static 'paperless_uploader/css/dropzone.css' %}" type="text/css" rel="stylesheet"/>
 	</head>
 	<body>
 
 		<!-- IMPORTANT enctype attribute! -->
-		<form class="dropzone" id="myDropzone"  action="{% url "paperless_uploader:home" %}" method="post" enctype="multipart/form-data">
+		<form class="dropzone" id="myDropzone"
+					action="{% url "paperless_uploader:paperless_uploader_home" %}"
+					method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 		</form>
 		<button id="submit-all">
