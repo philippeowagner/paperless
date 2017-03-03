@@ -54,7 +54,7 @@ urlpatterns = [
 
 
     url(r"^docs/", include("paperless_ui.urls")),
-    url(r'^docs/upload/$', upload_files, name='upload_files_home'),
+    url(r'^docs/upload/$', upload_files, name='paperless_uploader_home'),
 
     # The Django admin
     url(r"admin/", admin.site.urls),
