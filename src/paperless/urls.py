@@ -31,6 +31,8 @@ router.register(r'tags', TagViewSet)
 router.register(r'documents', DocumentViewSet)
 router.register(r'logs', LogViewSet)
 
+from paperless_uploader.views import upload_files
+
 urlpatterns = [
 
     # API
@@ -52,7 +54,7 @@ urlpatterns = [
 
 
     url(r"^docs/", include("paperless_ui.urls")),
-    url(r'^docs/upload/$', 'paperless_uploader.views.upload_files', name='upload_files_home'),
+    url(r'^docs/upload/$', upload_files, name='upload_files_home'),
 
     # The Django admin
     url(r"admin/", admin.site.urls),
