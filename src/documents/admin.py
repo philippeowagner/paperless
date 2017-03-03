@@ -67,11 +67,9 @@ class DocumentAdmin(CommonAdmin):
 
     def thumbnail(self, obj):
         png_img = self._html_tag(
-            "img-responsive", # img
+            "img",
             src="/fetch/thumb/{}".format(obj.id),
-            width="1184",
-            height="666",
-            #class="img-responsive",
+            width="200",
             alt="Thumbnail of {}".format(obj.file_name),
             title=obj.file_name
         )
@@ -123,10 +121,7 @@ class DocumentAdmin(CommonAdmin):
             return "<{kind} {attributes}>{inside}</{kind}>".format(
                     kind=kind, attributes=" ".join(attributes), inside=inside)
 
-        if kind == "img-responsive":
-            return "<img class='img-responsive' {attributes}/>".format(attributes=" ".join(attributes))
-        else:
-            return "<{} {}/>".format(kind, " ".join(attributes))
+        return "<{} {}/>".format(kind, " ".join(attributes))
 
 
 class LogAdmin(CommonAdmin):
