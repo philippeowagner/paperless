@@ -12,8 +12,8 @@
 
 		<!--breadcrum start-->
 		<ol class="breadcrumb text-left">
-		  <li><a href="">Dashboard</a></li>
-		  <li class="active">Card</li>
+		  <li><a href="">Paperless</a></li>
+		  <li class="active">Documents</li>
 		</ol><!--breadcrum end-->
 
 		<!--component header -->
@@ -24,7 +24,7 @@
 
 		{% for doc in docs %}
 			<div class="col-md-4 col-sm-6">
-				<h3 class="text-muted">Media, Title, Action, and Description area</h3>
+				<h3 class="text-muted"></h3>
 				<div class="pmd-card pmd-card-default pmd-z-depth">
 					<div class="pmd-card-media">
 						<img src="{{ doc.thumbnail_url }}" width="1184" height="666" class="img-responsive">
@@ -39,11 +39,11 @@
 						<a href="{{ doc.download_url }}"><button class="btn pmd-btn-flat pmd-ripple-effect btn-default" type="button">Edit</button></a>
 					</div>
 					<div class="pmd-card-body">
-						<p>
+
 						{% for tag in doc.tags.all %}
 								<a href="?tag={{tag.slug}}"><span class="badge">{{tag.slug}}</span></a>
 						{% endfor %}
-					  </p>
+					  
 						<p>
 							Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.
 						</p>
