@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
+{% extends "paperless_ui/base.html" %}
+{% block content %}
+<div id="content" class="pmd-content">
+
+    <!-- Buttons -->
+	<div class="container-fluid">
+
+		<!-- Title -->
+		<h1 class="section-title" id="services">
+			<span>Card</span>
+		</h1><!-- End Title -->
+
+		<!--breadcrum start-->
+		<ol class="breadcrumb text-left">
+		  <li><a href="">Paperless</a></li>
+		  <li class="active">Documents</li>
+		</ol><!--breadcrum end-->
+
+		<!--component header -->
+		<div class="componant-title-bg">
+			<p class="lead">A card is a flexible and extensible content container. It includes options for header and footer, a wide variety of content, contextual background colors, and powerful display options.</p>
+		</div> <!--component header end -->
 
 		{% load staticfiles %}
 		<link href="{% static 'paperless_uploader/css/dropzone.css' %}" type="text/css" rel="stylesheet"/>
-	</head>
-	<body>
 
 		<!-- IMPORTANT enctype attribute! -->
 		<form class="dropzone" id="myDropzone"
@@ -43,5 +59,42 @@
 				}
 			};
 		</script>
-	</body>
-</html>
+
+ 	 		</div>
+
+ 	 	</div> <!--Buttons end-->
+
+ 	 </div>
+
+
+
+ 	 <!-- Floating Action Button like Google Material -->
+ 	 <div class="menu pmd-floating-action"  role="navigation">
+ 	 	<a href="/docs/upload/" class="pmd-floating-action-btn btn btn-sm pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-default" data-title="Cloud Upload">
+ 	 		<span class="pmd-floating-hidden">Cloud Upload</span>
+ 	 		<i class="material-icons">cloud_upload</i>
+ 	 	</a>
+
+ 	 	<a href="#" class="pmd-floating-action-btn btn btn-sm pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-default" data-title="Schedule">
+ 	 		<span class="pmd-floating-hidden">Schedule</span>
+ 	 		<i class="material-icons">schedule</i>
+ 	 	</a>
+
+ 	 	<a href="#" class="pmd-floating-action-btn btn btn-sm pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-default" data-title="Photo">
+ 	 		<span class="pmd-floating-hidden">Photo</span>
+ 	 		<i class="material-icons">photo_camera</i>
+ 	 	</a>
+
+
+
+
+
+ 	 	<a class="pmd-floating-action-btn btn pmd-btn-fab pmd-btn-raised pmd-ripple-effect btn-primary" data-title="Add" href="javascript:void(0);">
+ 	 		<span class="pmd-floating-hidden">Primary</span>
+ 	 		<i class="material-icons pmd-sm">add</i>
+ 	 	</a>
+ 	 </div>
+
+
+
+ 	 {% endblock %}
