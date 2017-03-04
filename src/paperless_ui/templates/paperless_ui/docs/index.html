@@ -39,12 +39,14 @@
 						<a href="{{ doc.download_url }}"><button class="btn pmd-btn-flat pmd-ripple-effect btn-default" type="button">Edit</button></a>
 					</div>
 					<div class="pmd-card-body">
+						<p>
 						{% for tag in doc.tags.all %}
-								<a href="#{{tag.slug}}"><span style="background-color: {{ tag.get_colour_display }};" class="badge">Tag 1</span></a>
+								<a href="#{{tag.slug}}"><span class="badge" style="background-color: {{ tag.get_colour_display }};" >Tag 1</span></a>
 
 
 						{% endfor %}
-						<p>
+					  </p>
+					  <p>
 						Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.
 					</p>
 					</div>
