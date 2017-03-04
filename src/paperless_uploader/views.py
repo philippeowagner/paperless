@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 from .forms import FileFieldForm
 
@@ -12,7 +13,7 @@ def handle_uploaded_file(f):
         for chunk in f.chunks():
             dest.write(chunk)
 
-
+@login_required
 def upload_files(request):
     """ """
     if request.method == 'POST':
