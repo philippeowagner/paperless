@@ -218,7 +218,7 @@ class Document(models.Model):
         try:
             return open(self.source_path, "rb")
         except FileNotFoundError:
-            return "placeholder.png"
+            return ""
     @property
     def file_name(self):
         return slugify(str(self)) + "." + self.file_type
@@ -238,7 +238,10 @@ class Document(models.Model):
 
     @property
     def thumbnail_file(self):
-        return open(self.thumbnail_path, "rb")
+        try:
+            return open(self.thumbnail_path, "rb")
+        except FileNotFoundError:
+            return ""
 
     @property
     def thumbnail_url(self):
